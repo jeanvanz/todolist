@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+    height: 100%;
+}
+
+body {
+    background-color: #9e9098;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+
+/* utility classes */
+
+.btn{
+    background-color: azure;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    margin-top: 0.4rem;
+    padding: 0.6rem;
+}
+
+.btn-info {
+    background-color: beige;
+}
+
+.d-block {
+    display: block;
+}
+
+.m-t-1{
+    margin-top: 1rem;
+}
+
+.form-vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-vertical label{
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.form-vertical input {
+    padding: 1rem;
+}
+
+/* classes do projeto */
+
+.headerMain{
+    background-color: black;
+    color: whitesmoke;
+    padding: 1rem;
+}
+
+.headerMain .logo{
+    font-size: 2rem;
+}
+
+.mainContent{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.formAddTaskContainer {
+    background-color: #FFF;
+    margin-top: 2rem;
+    max-width: 840px;
+    padding: 2rem;
+    width: 100%;
+}
+
+.taskContainer {
+    background-color: #FFF;
+    margin: 2rem;
+    max-width: 840px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.noTasks {
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 2rem;
+    text-align: center;
+}
+
+.taskList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.taskItem {
+    border: 1px solid #A0CED9;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 49%;
+}
+
+@media screen and (max-device-width: 480px) {
+    .taskItem {
+        width: 100%;
+    }
+}
+
+.taskTitle {
+    font-weight: 400;
+}
+
+.taskItem[open] .taskTitle {
+    margin-bottom: 10px;
+}
+
+.footerMain{
+    background-color: black;
+    color: whitesmoke;
+    padding: 1rem;
+}
+
