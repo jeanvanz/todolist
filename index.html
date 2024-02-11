@@ -26,10 +26,13 @@
         <div class="formAddTaskContainer">
             <form class="form-vertical" id="frmTask" autocomplete="off">
                 <label for="txtTaskTitle">Título da Task:</label>
-                <input type="text" name="txtTaskTitle" id="txtTaskTitle" placeholder="Adicione o título da task" minlength="5" maxlength="60" required autofocus>
+                <input type="text" name="txtTaskTitle" id="txtTaskTitle" placeholder="Adicione o título da task"
+                    minlength="5" maxlength="60" required autofocus>
+
                 <label for="txtTaskDescription">Descrição da Task:</label>
-                <input type="text" name="txtTaskDescription" id="txtTaskDescription" placeholder="Adicione a descrição da task" maxlength="80">
-                
+                <input type="text" name="txtTaskDescription" id="txtTaskDescription"
+                    placeholder="Adicione a descrição da task" maxlength="80">
+
                 <input type="hidden" name="action" value="NEW_TASK" id="frmAction">
                 <input type="hidden" name="frmTaskId" value="" id="frmTaskId">
 
@@ -40,45 +43,15 @@
                 </div>
             </form>
         </div>
-        
-               <!-- tasks -->
+
+        <!-- tasks -->
         <div class="taskContainer">
             <div class="noTasks" id="emptyTaskListElement">
                 Nenhuma task cadastrada
             </div>
-        
-            <div class="taskList" id="taskListElement">
-                <!-- inicio task -->
-                <details class="taskItem">
-                    <summary class="taskTitle">Details</summary>
-                    Something small enough to escape casual notice.
-                    <div>
-                        <button class="btn">Pronto</button>
-                        <button class="btn btn-info">Alterar</button>
-                    </div>
-                </details>
-                <!-- Fim task -->
-                <!-- inicio task -->
-                <details class="taskItem">
-                    <summary class="taskTitle">Details</summary>
-                    Something small enough to escape casual notice.
-                    <div>
-                        <button class="btn">Pronto</button>
-                        <button class="btn btn-info">Alterar</button>
-                    </div>
-                </details>
-                <!-- Fim task -->
-                <!-- inicio task -->
-                <details class="taskItem">
-                    <summary class="taskTitle">Details</summary>
-                    Something small enough to escape casual notice.
-                    <div>
-                        <button class="btn">Pronto</button>
-                        <button class="btn btn-info">Alterar</button>
-                    </div>
-                </details>
-            </div>
-        </div>               
+
+            <div class="taskList" id="taskListElement"></div>
+        </div>
     </main>
 
     <footer class="footerMain">
@@ -86,6 +59,22 @@
     </footer>
 
     <script src="assets/script.js"></script>
-</body>
 
+    <template>
+        <details class="taskItem">
+            <summary class="taskTitle">
+                TITULO
+            </summary>
+            DESCRICAO
+            <div>
+                <button class="btn">
+                    Pronto
+                </button>
+                <button class="btn btn-info">
+                    Alterar
+                </button>
+            </div>
+        </details>
+    </template>
+</body>
 </html>
