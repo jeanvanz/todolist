@@ -1,4 +1,4 @@
-const tasks = []
+const tasks = loadLocalData('savedTasks') || [];
 const taskListElement = document.getElementById("taskListElement");
 const emptyTaskListElement = document.getElementById("emptyTaskListElement");
 const frmTask = document.getElementById('frmTask');
@@ -32,6 +32,8 @@ function createTask(taskTitle, taskDescription = "") {
 
     tasks.push(task);
 
+    saveLocalData('savedTasks', tasks);
+
     renderTasks();
 
     return task;
@@ -40,6 +42,8 @@ function createTask(taskTitle, taskDescription = "") {
 function deleteTask(taskId) {
     const taskIndex = getIndexByTaskId(taskId);
     tasks.splice(taskIndex, 1);
+
+    saveLocalData('savedTasks', tasks);
 
     renderTasks();
 }
@@ -54,6 +58,9 @@ function updateTask(task = {}) {
         };
 
         frmTask.frmAction.value = 'NEW_TASK';
+
+        saveLocalData('savedTasks', tasks);
+
         renderTasks();
         return tasks[taskIndex];
     } catch (e) {
@@ -136,5 +143,14 @@ frmTask.addEventListener('submit', function (event) {
 
     frmTask.reset();
 })
+
+function saveLocalData(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
+
+function loadLocalData(key) {
+    const dataString = localStorage.getItem(key);
+    return JSON.parse(dataString);
+}
 
 renderTasks();
